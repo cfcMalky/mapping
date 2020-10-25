@@ -91,7 +91,7 @@
       };
     };
     //YOUR TURN: add your Mapbox token 
-    mapboxgl.accessToken = '<pk.eyJ1IjoiY2ZjbWFsa3kiLCJhIjoiY2tnbTdtNjM3MTBnaTMxbmEzbDQ2czdhdCJ9.wv_JgZc3wvqeHm3-EulP4Q>'; //Mapbox token 
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2ZjbWFsa3kiLCJhIjoiY2tnbTdtNjM3MTBnaTMxbmEzbDQ2czdhdCJ9.wv_JgZc3wvqeHm3-EulP4Q'; //Mapbox token 
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
@@ -104,7 +104,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: '<https://docs.google.com/spreadsheets/d/2PACX-1vT-uX6DDjW8jnmFW27YTxwoHlwoFABkTrNfkyfsUnMaPqFDXR2uGPNA2BkBCD8zjAci9QFdFoRsCVeO/gviz/tq?tqx=out:csv&sheet=Available>',
+        url: 'https://docs.google.com/spreadsheets/d/2PACX-1vT-uX6DDjW8jnmFW27YTxwoHlwoFABkTrNfkyfsUnMaPqFDXR2uGPNA2BkBCD8zjAci9QFdFoRsCVeO/gviz/tq?tqx=out:csv&sheet=Available',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -142,7 +142,7 @@
               //set popup text 
               //You can adjust the values of the popup to match the headers of your CSV. 
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV. 
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Address + `</h4>` + `<h4>` + `<b>` + `Phone: ` + `</b>` + e.features[0].properties.Phone + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.Ref + `</h3>` + `<h4>` + `<b>` + `Vehicle : ` + `</b>` + e.features[0].properties.Vehicle + `</h4>` + `<h4>` + `<b>` + `Collection Postcode: ` + `</b>` + e.features[0].properties.Collection Postcode + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
